@@ -1,6 +1,6 @@
 \name{ken_schools}
 \alias{ken_schools}
-\title{Kenya Schools}
+\title{Kenya Schools Data}
 \usage{
 ken_schools
 }

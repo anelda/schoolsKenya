@@ -1,6 +1,6 @@
-Package: schoolsRkenya
+Package: schoolsKenya
 Type: Package
-Title: Data package containing information about schools in Kenya
+Title: Primary and Secondary school locations in Kenya
 Version: 0.1.0
 Authors@R: person("Anelda", "Van der Walt", email = "anelda@talarify.co.za",
                   role = c("aut", "cre"))
@@ -9,6 +9,6 @@ Description: This package provides easy access to school location data from Keny
     The original dataset was provided by Ministry of Education and was published under CC-0.
     https://datacatalog.worldbank.org/dataset/kenya-schools
     Downloaded from https://energydata.info/dataset/2fda191d-c3c6-4002-8c82-daa02008a9e3/resource/c38fbdcd-8e1d-4787-b4ad-724fa46d30ad/download/schools.json on 26 July 2020.
-License: CC-0
+License: CC0
 Encoding: UTF-8
 LazyData: true
