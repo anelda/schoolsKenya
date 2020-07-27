@@ -45,9 +45,12 @@ _Note:_ The json file provided at the same location appears to only have data fo
          source = "Source"
       ) %>% 
       mutate(school_name = str_to_title(school_name),
+            county = str_to_title(county),
             district = str_to_title(district),
-            zone = str_to_title(zone)
-            )
+            zone = str_to_title(zone),
+            sub_county = str_to_title(sub_county),
+            ward = str_to_title(ward)
+      )
     ```
   - Data was written to an R data file:
     
