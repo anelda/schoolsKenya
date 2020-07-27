@@ -11,5 +11,11 @@ looking at teenage pregnancies since 2016.
 The data was obtained as JSON file from https://datacatalog.worldbank.org/dataset/kenya-schools on 26 July 2020.
 The original data was provided to the World Bank Data Catalogue by the Ministry of Education of Kenya and was last updated in 2016.
 
+## Installation
 
+```
+library(devtools)
+install_github("anelda/schoolsKenya")
+
+```
 
