@@ -18,53 +18,8 @@ _Note:_ The json file provided at the same location appears to only have data fo
 ## Data processing
 
 - The .rar archive was downloaded from the link provided above.
-- The .shp file was opened in R as follows:
-
-  ``` 
-  > library(sf)
-  > ken_schools <- st_read("Schools.shp")
-  ```
-  
-- Data was cleaned as follows:
-
-  ```
-  > library(tidyverse)
-  > library(stringr)
-
-  > ken_schools <- ken_schools %>% 
-      # Tidy column names
-      rename(status = "Status",
-         level = "LEVEL",
-         objectid = "OBJECTID",
-         county = "County",
-         code = "CODE",
-         school_name = "SCHOOL_NAM",
-         district = "DISTRICT",
-         zone = "ZONE",
-         sub_county = "SUB_COUNTY",
-         ward = "Ward",
-         longitude = "X_Coord",
-         latitude = "Y_Coord",
-         source = "Source"
-      ) %>% 
-      # Tidy values as some text was in all caps and others in Titlecase
-      mutate(school_name = str_to_title(school_name),
-            county = str_to_title(county),
-            district = str_to_title(district),
-            zone = str_to_title(zone),
-            sub_county = str_to_title(sub_county),
-            ward = str_to_title(ward)
-      ) %>%
-      # Tharaka-Nithi county occurs in two formats - either with or without the hyphen, standardised the name
-      mutate(county = case_when(county == "Tharaka Nithi" ~ "Tharaka-Nithi",
-                            TRUE ~ as.character(county)))
-
-    ```
-  - Data was written to an R data file:
-    
-    ```
-    > save(ken_schools, file = "data/ken_schools.rda")
-    ```
+- Raw data (unrar-ed shp.rar) is available in `[raw-data/](raw-data/)`.
+- The data cleaning script is available in `[raw-data/get_schools.R](raw-data/get_schools.R)`.
 
 ## Installation
 
