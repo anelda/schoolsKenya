@@ -11,6 +11,8 @@ looking at teenage pregnancies since 2016.
 The data was obtained as SHP file from https://datacatalog.worldbank.org/dataset/kenya-schools on 26 July 2020.
 The original data was provided to the World Bank Data Catalogue by the Ministry of Education of Kenya and was last updated in 2016.
 
+_CAVEAT_: Upon closer inspection it appears as if there are also data from Open Data Kenya, 2007 in the SHP file. This data have counties such as Nairobi North, Nairobi East, and Nairobi South that complicates spatial data analysis with current county boundaries where there's only Nairobi County.
+
 _Note:_ The json file provided at the same location appears to only have data for primary schools
 
 ## Data processing
