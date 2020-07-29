@@ -30,6 +30,7 @@ _Note:_ The json file provided at the same location appears to only have data fo
   > library(stringr)
 
   > ken_schools <- ken_schools %>% 
+      # Tidy column names
       rename(status = "Status",
          level = "LEVEL",
          objectid = "OBJECTID",
@@ -44,13 +45,18 @@ _Note:_ The json file provided at the same location appears to only have data fo
          latitude = "Y_Coord",
          source = "Source"
       ) %>% 
+      # Tidy values as some text was in all caps and others in Titlecase
       mutate(school_name = str_to_title(school_name),
             county = str_to_title(county),
             district = str_to_title(district),
             zone = str_to_title(zone),
             sub_county = str_to_title(sub_county),
             ward = str_to_title(ward)
-      )
+      ) %>%
+      # Tharaka-Nithi county occurs in two formats - either with or without the hyphen, standardised the name
+      mutate(county = case_when(county == "Tharaka Nithi" ~ "Tharaka-Nithi",
+                            TRUE ~ as.character(county)))
+
     ```
   - Data was written to an R data file:
     
@@ -71,20 +77,20 @@ install_github("anelda/schoolsKenya")
 ```
 > library(schoolsKenya)
 > head(ken_schools)
-  Status             geometry   LEVEL OBJECTID  County CODE SCHOOL_NAM        DISTRICT     ZONE      SUB_COUNTY      Ward  X_Coord Y_Coord
-1 Public 143417.2, 10045338.9 Primary        1 Baringo    1   BAKWANIN BARINGO CENTRAL  KABASIS Baringo Central     Sacho 35.79708 0.40955
-2 Public 153107.7, 10037237.7 Primary        2 Baringo    2    BEKIBON BARINGO CENTRAL   TENGES   Baringo South   Marigat 35.88406 0.33640
-3 Public 140602.8, 10058916.0 Primary        3 Baringo    3    BOKORIN BARINGO CENTRAL KABARNET Baringo Central Kapropita 35.77177 0.53218
-4 Public 141363.8, 10049249.9 Primary        4 Baringo    4  BOROWONIN BARINGO CENTRAL KABARNET Baringo Central Kapropita 35.77864 0.44487
-5 Public 143236.9, 10048498.5 Primary        5 Baringo    5      BOSIN BARINGO CENTRAL  KABASIS Baringo Central     Sacho 35.79545 0.43809
-6 Public     155683, 10040602 Primary        6 Baringo    6     BUIWON BARINGO CENTRAL   TENGES   Baringo South   Marigat 35.90716 0.36680
-                       Source
-1 Ministry of Education, 2016
-2 Ministry of Education, 2016
-3 Ministry of Education, 2016
-4 Ministry of Education, 2016
-5 Ministry of Education, 2016
-6 Ministry of Education, 2016
+  objectid code school_name   level status  county        district     zone      sub_county      ward longitude latitude                      source
+1        1    1    Bakwanin Primary Public Baringo Baringo Central  Kabasis Baringo Central     Sacho  35.79708  0.40955 Ministry of Education, 2016
+2        2    2     Bekibon Primary Public Baringo Baringo Central   Tenges   Baringo South   Marigat  35.88406  0.33640 Ministry of Education, 2016
+3        3    3     Bokorin Primary Public Baringo Baringo Central Kabarnet Baringo Central Kapropita  35.77177  0.53218 Ministry of Education, 2016
+4        4    4   Borowonin Primary Public Baringo Baringo Central Kabarnet Baringo Central Kapropita  35.77864  0.44487 Ministry of Education, 2016
+5        5    5       Bosin Primary Public Baringo Baringo Central  Kabasis Baringo Central     Sacho  35.79545  0.43809 Ministry of Education, 2016
+6        6    6      Buiwon Primary Public Baringo Baringo Central   Tenges   Baringo South   Marigat  35.90716  0.36680 Ministry of Education, 2016
+              geometry
+1 143417.2, 10045338.9
+2 153107.7, 10037237.7
+3 140602.8, 10058916.0
+4 141363.8, 10049249.9
+5 143236.9, 10048498.5
+6     155683, 10040602
 > 
 
 ```
