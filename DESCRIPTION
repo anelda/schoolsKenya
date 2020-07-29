@@ -7,6 +7,7 @@ Authors@R: person("Anelda", "Van der Walt", email = "anelda@talarify.co.za",
 Description: This package provides easy access to school location data from Kenya.
     The dataset is downloaded from The World Bank Data Catalogue and includes primary as well as secondary school data.
     The original dataset was provided by Ministry of Education and was published under CC-0.
+    The dataset seems to also includes data from Open Data Kenya, 2007 wich include non-standard county names such as Nairobi North, Nairobi South, Nairobi East
     https://datacatalog.worldbank.org/dataset/kenya-schools
     Downloaded from https://energydata.info/dataset/2fda191d-c3c6-4002-8c82-daa02008a9e3/resource/c38fbdcd-8e1d-4787-b4ad-724fa46d30ad/download/schools.json on 26 July 2020.
 License: CC0
