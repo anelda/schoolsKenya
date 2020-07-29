@@ -18,8 +18,8 @@ _Note:_ The json file provided at the same location appears to only have data fo
 ## Data processing
 
 - The .rar archive was downloaded from the link provided above.
-- Raw data (unrar-ed shp.rar) is available in `[raw-data/](raw-data/)`.
-- The data cleaning script is available in `[raw-data/get_schools.R](raw-data/get_schools.R)`.
+- Raw data (unrar-ed shp.rar) is available in [raw-data/](raw-data/).
+- The data cleaning script is available in [raw-data/get_schools.R](raw-data/get_schools.R).
 
 ## Installation
 
