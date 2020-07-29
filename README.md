@@ -5,8 +5,7 @@
 
 R package that provides access to school location information from Kenya Ministry of Education.
 
-The package was developed as part of a contribution made by the afrimapr project to the @WiGISKe #DataViz challenge
-looking at teenage pregnancies since 2016.
+The package was developed as part of a contribution made by the afrimapr project to the [@WiGISKe #DataViz challenge](https://twitter.com/WiGISKe/status/1286553995159441409) looking at teenage pregnancies since 2016.
 
 ## Data source
 
